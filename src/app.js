@@ -1,13 +1,11 @@
 import express from "express";
+import { validateParams } from "./middlewares.js";
+import routes from "./routes.js";
 
 const app = express();
 
-app.get("/test", (req, res) => {
-  res.send("Testing");
-});
+app.use(validateParams);
 
-app.get("/scrape", (req, res) => {
-  res.send("Scraping");
-});
+routes(app);
 
 export default app;
