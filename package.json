@@ -1,0 +1,15 @@
+{
+  "name": "scraper-api-challenge",
+  "version": "1.0.0",
+  "description": "Data Extration API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "author": "lsegg",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
