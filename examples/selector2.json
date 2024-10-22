@@ -1,7 +1,7 @@
 {
   "title": "h1:first-child",
   "prices": {
-    "__root": "html > body > table > tr",
+    "__root": "html > body > table > tbody > tr",
     "itemName": "td:nth-child(1)",
     "price": "td:nth-child(2)"
   }

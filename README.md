@@ -41,7 +41,11 @@ The results will be logged in the console and written in the _scrapedData.json_ 
 - _selectors_ is an object of keys with css selectors as values.
 - In case of repetitive data, the property _\_\_root_ is required.
 
-E.g. `curl -X POST http://localhost:3000/scrape -H "Content-Type: application/json" -d '{"html": "https://github.com/", "selectors": "examples/selector3.json"}'`
+E.g.
+
+```
+curl -X POST http://localhost:3000/scrape -H "Content-Type: application/json" -d '{"html": "https://github.com/", "selectors": {"title": "h1:first-child"}}'
+```
 
 ## Requirements ⚙️
 
@@ -52,7 +56,8 @@ E.g. `curl -X POST http://localhost:3000/scrape -H "Content-Type: application/js
 
 ## Notes 📋
 
-- The first output example is wrong since there's no "p" element child of "h1"
 - I based my libraries decision on most popular and downloaded npm options.
+- The first example provided in the challenge description is wrong since there's no "p" element child of "h1"
+- The second example provided in the challenge description was modified to include tbody because of the cheerio load function [behaviour](https://cheerio.js.org/docs/basics/loading#load)
 
 ---

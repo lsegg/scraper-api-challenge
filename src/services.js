@@ -31,7 +31,6 @@ function extractText($, selector) {
 function extractNestedStructure($, nestedSelector) {
   const { __root, ...subSelectors } = nestedSelector;
   const rootElements = $(__root);
-  console.log(rootElements);
 
   return rootElements
     .map((_, rootElement) => {

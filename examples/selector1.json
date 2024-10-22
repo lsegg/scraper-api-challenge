@@ -1,4 +1,4 @@
 {
   "title": "h1:first-child",
-  "firstParagraph": "h1:first-child p:first-child"
+  "firstParagraph": "p:first-of-type"
 }
