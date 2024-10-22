@@ -9,7 +9,7 @@
     "test": "jest",
     "cli-1": "node cli-scraper.js examples/input1.html examples/selector1.json",
     "cli-2": "node cli-scraper.js examples/input2.html examples/selector2.json",
-    "cli-3": "node cli-scraper.js https://github.com/ examples/selector2.json"
+    "cli-3": "node cli-scraper.js https://github.com/ examples/selector3.json"
   },
   "jest": {
     "verbose": true,

@@ -5,7 +5,7 @@ function routes(app) {
     res.send("Testing endpoint");
   });
 
-  app.get("/scrape", scrapeHandler);
+  app.post("/scrape", scrapeHandler);
 }
 
 export default routes;

@@ -1,10 +1,10 @@
-import scrape from "./services.js";
+import { getUrlData, scrape } from "./services.js";
 
-export function scrapeHandler(req, res) {
+export async function scrapeHandler(req, res, next) {
   try {
-    console.info("Inside controller");
-    // scraper logic
-    const scrapedData = scrape(req.body);
+    const { html, selectors } = req.body;
+    const data = html.startsWith("http") ? await getUrlData(html) : html;
+    const scrapedData = scrape(data, selectors);
     res.send(scrapedData);
   } catch (e) {
     return res.status(500).send(e.message);

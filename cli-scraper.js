@@ -1,14 +1,11 @@
 import fs from "fs";
-import axios from "axios";
-import scrape from "./src/services.js";
+import { getUrlData, scrape } from "./src/services.js";
 
 async function getHtmlContent(source) {
   if (source.startsWith("http")) {
-    const response = await axios.get(source);
-    return response.data;
-  } else {
-    return fs.readFileSync(source, "utf-8");
+    return getUrlData(source);
   }
+  return fs.readFileSync(source, "utf-8");
 }
 
 function handleWritingError(err) {

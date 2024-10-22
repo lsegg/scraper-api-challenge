@@ -1,4 +1,10 @@
 import * as cheerio from "cheerio";
+import axios from "axios";
+
+export async function getUrlData(url) {
+  const response = await axios.get(url);
+  return response.data;
+}
 
 function processSelector($, selector) {
   if (typeof selector === "string") {
@@ -39,7 +45,7 @@ function extractNestedStructure($, nestedSelector) {
     .filter((item) => Object.values(item).some((value) => value !== ""));
 }
 
-function scrape(html, selectors) {
+export function scrape(html, selectors) {
   try {
     const $ = cheerio.load(html);
     const result = {};
@@ -54,5 +60,3 @@ function scrape(html, selectors) {
     throw new Error("Failed to scrape HTML content");
   }
 }
-
-export default scrape;

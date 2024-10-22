@@ -15,7 +15,7 @@ This is a step by step guide on how to use this simple data extraction package w
 
 1. Run `npm i` to install the package dependencies.
 
-## CLI Usage
+## CLI Usage ✅
 
 Run:
 
@@ -29,11 +29,19 @@ Run:
 
 E.g. `node cli-scraper.js examples/input1.html examples/selector1.json`
 
-## API Usage
+The results will be logged in the console and written in the _scrapedData.json_ file inside the examples folder.
+
+## API Usage ✅
 
 1. Run `npm run dev` to start the server.
-2. Use postman to make your API requests.
-3. The body should be a JSON with html and selectors properties. In case of repetitive data, the property _\_\_root_ is required.
+2. Use curl, postman or another API testing tool to make your API requests.
+3. The HTTP method should be POST and the body should be a JSON with html and selectors properties:
+
+- _html_ can either be an html file stringified or a web URl.
+- _selectors_ is an object of keys with css selectors as values.
+- In case of repetitive data, the property _\_\_root_ is required.
+
+E.g. `curl -X POST http://localhost:3000/scrape -H "Content-Type: application/json" -d '{"html": "https://github.com/", "selectors": "examples/selector3.json"}'`
 
 ## Requirements ⚙️
 
@@ -42,7 +50,7 @@ E.g. `node cli-scraper.js examples/input1.html examples/selector1.json`
 - A text editor like [Visual Studio Code](https://code.visualstudio.com/)
 - An API testing platform like [Postman](https://www.postman.com/)
 
-## Notes
+## Notes 📋
 
 - The first output example is wrong since there's no "p" element child of "h1"
 - I based my libraries decision on most popular and downloaded npm options.
